@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demarcus Simmons - Resume/CV</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="global.js"></script>
+    <style>
+        .triangle {
+            width: 0; 
+            height: 0; 
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 20px solid white;
+        }
+        .resume-cv-dropdown {
+            background-color: var(--secondary);
+            padding: 1rem;
+            margin-bottom: 0;
+            margin-top: 1rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            font-size: xx-large;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .resume-cv-dropdown:hover {
+            background-color: var(--tertiary);
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"></div>
+        <img id="hamburger-menu" src="Images/hamburger_menu.png" alt="Hamburger Menu" onclick="toggleHamburgerNav()">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume_cv.html">Resume/CV</a>
+    </nav>
+    <nav class="hamburger-menu-nav" style="display: none;">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume_cv.html">Resume/CV</a>
+    </nav>
+    <main>
+        <div class="resume-cv-dropdown" onclick="toggleDisplay('resume')"><p>Resume</p><div id="resume-triangle" class="triangle"></div></div>
+        <section id="resume-content" class="main" style="margin: 0 2rem; display: none;">
+            <embed src="Resume_Oct_2023.pdf" width="100%" height="1000px"/>
+        </section>
+        <div class="resume-cv-dropdown" onclick="toggleDisplay('cv')"><p>CV</p><div id="cv-triangle" class="triangle"></div></div>
+        <section id="cv-content" class="main" style="margin: 0 2rem; display: none;">
+            <embed src="" width="100%" height="1000px"/>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <div>
+                <div class="logo"></div>
+                <p>&copy; Demarcus Simmons Intellectual Property</p>
+            </div>
+            <div>
+                <a href="https://www.flaticon.com/free-icons/cat" title="cat icons" target="_blank">Cat icons created by Dave Gandy - Flaticon</a>
+            </div>
+            <div>
+                <h3>Connect With Me:</h3>
+                <a href="https://www.linkedin.com/in/marcus-simmons-670871183/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div>Also of Interest</div>
+    </footer>
+</body>
+</html>

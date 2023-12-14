@@ -1,0 +1,61 @@
+{
+    "projects": [
+        {
+            "title": "Packet Sniffing and Spoofing Lab",
+            "description": "This project report delves into an extensive exploration of packet sniffing and spoofing within the domain of network security. Crafted by Demarcus Simmons for the CNT4403 course at the University of West Florida, this report presents a detailed hands-on experience with the tools and techniques employed for packet analysis and manipulation.<br><br>Objective:<br>The primary goal of this assignment was to gain practical insights into the threats posed by packet sniffing and spoofing in network communication. By employing tools like Scapy, the project aimed to comprehend these threats as foundational elements in understanding and implementing robust security measures in networking.<br><br>Approach and Methodology:<br>The project utilized a set of materials including the Python programming language, Scapy (Python library), VMware (Ubuntu), and Docker. The experiments were meticulously executed and documented in a step-by-step manner, facilitated by the Docker environment that orchestrated the setup of containers involved in the experimentation process.<br><br>Key Experiments Conducted:<br><br>Packet Sniffing:<br><br>Task 1.1A: Sniffer Setup and Packet Capture: Employed a Python program (simple_sniffer.py) to capture packets, initially encountering permission issues resolved by executing the program with administrative rights.<br>Task 1.1B: Packet Filtering: Modified the sniffer program to filter specific packet types, observing captured packets based on various filter parameters.<br>ICMP Packet Spoofing:<br><br>Task 1.2: Spoofing ICMP Packets: Demonstrated the creation of ICMP echo request packets with arbitrary source IP addresses using Scapy, observing packet reception on a receiver VM via Wireshark.<br>Traceroute Analysis:<br><br>Task 1.3: Traceroute: Utilized a Python program to estimate the number of routers between source and destination by incrementing the Time-To-Live (TTL) field in ICMP packets and observing ICMP echo replies.<br>Integration of Sniffing and Spoofing:<br><br>Task 1.4: Sniffing and-then Spoofing: Further experiments involving the integration of packet sniffing and subsequent spoofing techniques.<br>Conclusion:<br>The project report encapsulates the in-depth exploration of these fundamental network security threats, emphasizing their implications and the significance of robust security measures. It provides a comprehensive understanding of packet interception and manipulation, essential for devising effective network defense strategies.",
+            "tags": ["Python","Docker","NetSecurity"],
+            "images": ["Images/sniffing_spoofing.jpg"],
+            "videos": [],
+            "resourceLinks": [
+                {
+                    "type": "pdf",
+                    "url": "resources/CNT4403-Assignment1.pdf"
+                }
+            ],
+            "externalLinks": [
+                {
+                    "site": "github",
+                    "url": "url.exsample.com"
+                }
+            ]
+        },
+        {
+            "title": "Local DNS Attack Lab",
+            "description": "Objective:<br>Demarcus Simmons conducted an in-depth investigation into local DNS cache poisoning attacks for the CNT4403 course at the University of West Florida. The report aimed to explore DNS functionality and its security implications, particularly focusing on attacker strategies targeting DNS servers.<br><br>Approach and Tools Used:<br>Utilizing Python, Scapy, VMware (Ubuntu), and Docker, the assignment followed a sequential task-based methodology. Docker facilitated the setup of a controlled lab environment, integral for conducting various experiments and tasks.<br><br>Key Tasks Conducted:<br><br>Testing the DNS Setup:<br>Initial tests involved verifying DNS query results for specific domain addresses, confirming legitimate responses from the local DNS server.<br><br>Attack Tasks:<br><br>Task 1: Direct Spoofing Response to User:<br>Conducted a user-based attack by sending spoofed DNS replies, showcasing successful receipt but limited impact due to transient results.<br><br>Task 2: DNS Cache Poisoning Attack – Spoofing Answers:<br>Targeted the local DNS server to execute a cache poisoning attack, influencing a specific hostname's stored result in the DNS cache.<br><br>Task 3: Spoofing NS Records:<br>Focused on manipulating the authority section in DNS replies to affect multiple domain names under a specific domain, successfully poisoning the authoritative section.<br><br>Conclusion:<br>The report's findings highlighted a comprehensive understanding of DNS operations and diverse attack vectors, providing insights into mitigating local DNS attacks and fortifying network security measures.",
+            "tags": ["Python","Docker","NetSecurity"],
+            "images": ["Images/DNSattack.jpg"],
+            "videos": [],
+            "resourceLinks": [
+                {
+                    "type": "pdf",
+                    "url": "resources/CNT4403-Assignment2.pdf"
+                }
+            ],
+            "externalLinks": [
+                {
+                    "site": "github",
+                    "url": "url.exsample.com"
+                }
+            ]
+        },
+        {
+            "title": "MD5 Collision Attack Lab",
+            "description": "Objective:<br>For the CNT4403 course at the University of West Florida, Demarcus Simmons conducted a hands-on exploration of one-way hash functions focusing on the impact of collision attacks. The lab aimed to comprehend the repercussions of breaking collision resistance in a widely-used one-way hash function, particularly targeting the MD5 hash function with actual collision attacks.<br><br>Materials and Methods:<br>The materials used in this assignment include the C programming language, Python programming language, and VMware (Ubuntu). The assignment proceeded through a series of tasks, methodically completed and documented in sequential order.<br><br>Task 1: Generating Two Different Files with the Same MD5 Hash<br>Task 1 involved generating two distinct files that share identical MD5 hash values. Utilizing a collision generator program provided, two files ('out1.bin' & 'out2.bin') were created with differing content yet producing the same MD5 hash. Despite file differences, both files generated the same MD5 hash.<br><br>Task 2: Understanding MD5’s Property<br>This task aimed to comprehend specific properties of the MD5 algorithm, emphasizing the Merkle-Damgard construction. Concatenating arbitrary suffix files to 'out1.bin' and 'out2.bin', the resulting files ('M || T' and 'N || T') produced identical MD5 hashes, affirming the property of MD5 wherein the hash remains constant despite the appended data.<br><br>Task 3: Generating Two Executable Files with the Same MD5 Hash<br>By manipulating a C program, two disparate versions with identical hash values were created. Parsing the program into prefix, 128-byte region, and suffix segments, adjustments were made to generate two distinct executables ('a1.out' & 'a2.out') with matching MD5 hashes.<br><br>Conclusion:<br>The lab findings underscore the significance of one-way hash functions in cryptography. Insights gained into collision attacks, length extension attacks, and the strengths and weaknesses of hashing algorithms empower the recognition and prevention of vulnerabilities. This knowledge differentiation between secure (e.g., SHA-2) and insecure (e.g., MD5) hashing algorithms enables the effective implementation of secure hashing in various applications.",
+            "tags": ["Python","C","NetSecurity"],
+            "images": ["Images/MD5collision.jpg"],
+            "videos": [],
+            "resourceLinks": [
+                {
+                    "type": "pdf",
+                    "url": "resources/CNT4403-Assignment5.pdf"
+                }
+            ],
+            "externalLinks": [
+                {
+                    "site": "github",
+                    "url": "url.exsample.com"
+                }
+            ]
+        }
+    ]
+}
