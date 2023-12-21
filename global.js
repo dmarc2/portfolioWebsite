@@ -226,6 +226,8 @@ function getResourceLinks(index) {
     projects[index].resourceLinks.forEach(link=>{
         if(link.type == "pdf")
             content += "<a href='" +link.url+ "' download>Download project pdf</a>";
+        else if(link.type == "powerpoint")
+            content += "<a href='" +link.url+ "' download>Download project powerpoint</a>";
     });
  
     return content;
