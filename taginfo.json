@@ -13,6 +13,14 @@
             "color": "#3f51b5"
         },
         {
+            "name": "IDS",
+            "color": "black"
+        },
+        {
+            "name": "IPS",
+            "color": "white"
+        },
+        {
             "name": "NetSecurity",
             "color": "#f71f42"
         }

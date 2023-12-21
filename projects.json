@@ -13,10 +13,6 @@
                 }
             ],
             "externalLinks": [
-                {
-                    "site": "github",
-                    "url": "url.exsample.com"
-                }
             ]
         },
         {
@@ -32,10 +28,6 @@
                 }
             ],
             "externalLinks": [
-                {
-                    "site": "github",
-                    "url": "url.exsample.com"
-                }
             ]
         },
         {
@@ -48,6 +40,25 @@
                 {
                     "type": "pdf",
                     "url": "resources/CNT4403-Assignment5.pdf"
+                }
+            ],
+            "externalLinks": [
+            ]
+        },
+        {
+            "title": "Network Management Security Tool: Snort",
+            "description": "Authors: Miles Brown, Zane Sampey, Marcus Simmons<br>Course: CNT4403 Computer & Network Security<br>Date: Nov 28, 2023<br><br>Abstract Summary:<br>This collaborative project involved three students aiming to gain proficiency in utilizing a Network Security Management tool (NSM), particularly focusing on investigating and evaluating the capabilities of the Snort tool within a virtual network topology created in VMWare. Leveraging Ubuntu Linux as the operating system and Docker for network topology configuration, the team employed Snort for comprehensive network traffic analysis.<br><br>Detail Description of the Tool:<br>Snort, a free Open Source Intrusion Prevention and Intrusion Detection System (IPS/IDS), monitors IP network traffic, identifying potentially malicious activities. Originally developed by Martin Roesch in 1998, it is currently maintained by Cisco. Operating primarily through command-line interface, Snort operates in three modes: Sniffer mode, Packet Logger mode, and Network Intrusion Detection System (NIDS) mode, offering varying levels of traffic analysis and logging.<br><br>Features of Snort:<br><br>Real-time traffic monitoring: Enables prompt detection of malicious activities with third-party programs like swatch or syslog-ng for real-time alerting.<br>Packet logging: Captures and logs network traffic in various formats for monitoring and auditing purposes.<br>Protocol analysis: Allows detailed inspection of potentially harmful data packets through protocol layer analysis.<br>Content matching: Categorizes rules by protocol and content, optimizing performance, especially for protocols like HTTP.<br>OS fingerprinting: Determines hosts' operating systems based on packet header formats.<br>Compatibility: Easily installable on various OS environments like Windows and Linux.<br>Open Source: Free and open-source software, providing users with flexibility in usage.<br>Easy rule implementation: Provides an intuitive signature-based rule system for network defense.<br><br>Architecture and Methodology:<br>The team created two virtual networks, one using VMs and another using Docker containers. Each network involved multiple machines acting as clients and servers, with Snort configured on the server to log packets from client connections.<br><br>Demonstration and Description:<br>To evaluate Snort, the team simulated TCP and spoofing attacks on a victim machine, customizing rules within the local.rules file. The demonstration included:<br><br>Tracing TCP protocol's 3-way handshake<br>Logging different network traffic types using custom rules<br>Creating rules to detect TCP SYN flood attacks<br>Demonstration Images:<br>[Image descriptions inserted here]<br><br>References:<br>The report includes references to various Snort manuals, user guides, and informative resources from Cisco, Amazon Web Services, LinuxSecurity.com, among others.<br><br>Contributions:<br><br>Marcus Simmons: Conducted research, tested tool in Docker setup, documented findings.<br>Zane Sampey: Assisted in network setup, rule development, added demonstration screenshots, proofread report.<br>Miles Brown: Designed network topology, researched Snort, tested tool with custom rules, contributed to the report and slides.",
+            "tags": ["IDS","IPS","NetSecurity"],
+            "images": ["Images/snort.jpg"],
+            "videos": [],
+            "resourceLinks": [
+                {
+                    "type": "pdf",
+                    "url": "resources/Final Project Report - CNT4403.pdf"
+                },
+                {
+                    "type": "powerpoint",
+                    "url": "resources/Snort Demo CNT4403.pptx"
                 }
             ],
             "externalLinks": [
