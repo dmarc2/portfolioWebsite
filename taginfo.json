@@ -27,6 +27,14 @@
         {
             "name": "Bash",
             "color": "orange"
+        },
+        {
+            "name": "Batch",
+            "color": "darkorange"
+        },
+        {
+            "name": "Game",
+            "color": "limegreen"
         }
     ]
 }
