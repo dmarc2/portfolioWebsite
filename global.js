@@ -237,7 +237,7 @@ function getExternalLinks(index) {
     let content = "";
     projects[index].externalLinks.forEach(link=>{
         if(link.site == "github")
-            content += "<img src='Images/github-logo.png' alt='" +link.url+ "'>";
+            content += "<a href='" +link.url+ "' target='_blank'><img src='Images/github-logo.png' alt='" +link.url+ "'></a>";
     });
  
     return content;

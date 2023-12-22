@@ -62,9 +62,20 @@
                 }
             ],
             "externalLinks": [
+            ]
+        },
+        {
+            "title": "Recursive Descent Parser",
+            "description": "This project involved the creation of a recursive descent parser responsible for parsing a basic programming language and transforming its syntax into an intermediate language format. Utilizing the C programming language, I developed this parser, accompanied by a bash script 'run' to execute the program with various file inputs.<br><br>Technical Approach:<br>The project centered around designing and implementing a recursive descent parser in C. This parser served as a critical component in interpreting the syntax and structure of the specified programming language. With a focus on algorithmic precision, I ensured the parser accurately deciphered the language's grammar rules and constructs.<br><br>Execution and Testing:<br>To evaluate the parser's functionality and assess its performance, I meticulously planned a series of test scenarios. The 'run' bash script facilitated automated testing, enabling the parser's execution with diverse input files. This systematic approach allowed thorough testing across different code structures and edge cases, ensuring the parser's robustness.<br><br>Key Contributions:<br>- Designing and implementing a recursive descent parser in C<br>- Developing a versatile bash script ('run') for automated testing across various input files<br>- Conducting comprehensive testing to validate the parser's accuracy and robustness<br>- Generating an intermediate language format from parsed programming language source code<br><br>Conclusion:<br>This project served as an instrumental learning experience in language processing and compiler design. The development of the recursive descent parser provided valuable insights into theoretical language parsing concepts while emphasizing the significance of meticulous testing and algorithmic precision in software development.",
+            "tags": ["C","Bash"],
+            "images": ["Images/RDP.jpg"],
+            "videos": [],
+            "resourceLinks": [
+            ],
+            "externalLinks": [
                 {
                     "site": "github",
-                    "url": "url.exsample.com"
+                    "url": "https://github.com/dmarc2/RecursiveDescentParser/tree/main"
                 }
             ]
         }

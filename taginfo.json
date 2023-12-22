@@ -23,6 +23,10 @@
         {
             "name": "NetSecurity",
             "color": "#f71f42"
+        },
+        {
+            "name": "Bash",
+            "color": "orange"
         }
     ]
 }
