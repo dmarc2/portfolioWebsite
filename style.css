@@ -116,6 +116,8 @@ footer div:last-child {
 .hamburger-menu-nav {
     width: 100vw;
     text-align: center;
+    position: sticky;
+    top: 100px;
 }
 nav.hamburger-menu-nav> a {
     display: block;
@@ -132,6 +134,14 @@ nav.hamburger-menu-nav> a {
 }
 .project:hover {
     cursor: pointer;
+}
+.project> img {
+    max-height: 300px;
+}
+.project> h3 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 0.3rem 0;
 }
 .tags {
     display: flex;
