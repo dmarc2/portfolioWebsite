@@ -110,6 +110,7 @@ nav {
     border-top: var(--tertiary-alt) 0.2em solid;
     border-bottom: var(--tertiary-alt) 0.2em solid;
     width: 100%;
+    padding: 0 0.9rem;
 }
 nav:first-of-type> div:first-child { 
     display: flex;
