@@ -10,6 +10,77 @@ window.addEventListener("DOMContentLoaded",()=>{
 });
 
 /*
+    This function is used to remove a cookie from the document.cookie.
+    @param cName - The name of the cookie
+*/
+function removeCookie(cName) {
+    if(cookie_isset(cName)) {
+        document.cookie = cName + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
+    }
+}
+
+/*
+    This function is used to set a cookie to document.cookie. Note: If
+    cValue is empty and the cookie is already set then the cookie will
+    be removed.
+    @param cName - The name of the cookie
+    @param cValue - The value of the cookie
+    @param exdays - The number of days until expiration (default=1)
+    @param path - The cookie's domain path (default="/")
+*/
+function setCookie(cName, cValue, exdays=1, path="/") {
+    if(exdays < 1) exdays = 1;  //Range check!
+
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+
+    if(cookie_isset(cName)) {
+    if(cValue.trim() == "")
+        removeCookie(cName);
+        return;
+    }
+
+    if(cName.trim() != "" && cValue.trim() != "")
+    document.cookie = cName + "=" + cValue + "; expires="+d.toUTCString()+"; path=" + path + ";";
+}
+
+/*
+    This function is used to get a cookie from document.cookie.
+    @param cName - The name of the cookie
+    @return - Returns the cookie's key:value pair.
+*/
+function getCookie(cName) {
+    if(cookie_isset(cName)) {
+    let cookies = document.cookie.split(";");
+    for(let i = 0; i < cookies.length; i++) {
+        if(cookies[i].includes(cName+"=")) {
+        return cookies[i].trim();
+        }
+    }
+    }
+}
+
+/*
+    This function is used to test if a cookie is set
+    to a certain value. If the cValue isn't provided
+    then the function tests if the cookie is in
+    the document.cookie variable regardless of value.
+    @param cName - The name of the cookie
+    @param cValue - The cookie value expected (default=null)
+*/
+function cookie_isset(cName, cValue=null) {
+    if(cValue != null) {
+        if(document.cookie.includes(cName+"="+cValue))
+            return true;
+        return false;
+    }
+    else if(document.cookie.includes(cName+"="))
+        return true;
+
+    return false;
+}
+
+/*
     This function is used to fetch project data from
     json file and store results in projects global array.
 */
@@ -58,10 +129,10 @@ function getProjects(howMany) {
         htmlContent += "<div class='project' onclick='showMore("+i+")'>";
         htmlContent += "<img src='" +projects[i].images[0]+ "' alt='Project Image'>";
         htmlContent += "<h3>" +projects[i].title+ "</h3>";
-        htmlContent += "<p>" +projects[i].description.replace("<br>","\n").substring(0,150)+ "...</p>";
+        htmlContent += "<p>" +projects[i].description.replace("<br>"," ").substring(0,150)+ "...</p>";
         htmlContent += "<div class='tags'><ul>";
         projects[i].tags.forEach(tag=>{
-            htmlContent += "<li class='tag' style='border: dashed 1px " +getTagColor(tag)+ "'>" +tag+ "</li>";
+            htmlContent += "<li class='tag' style='border: dashed 3px " +getTagColor(tag)+ "'>" +tag+ "</li>";
         });
         htmlContent += "</ul></div></div>"
     }
@@ -266,17 +337,7 @@ function showMore(index) {
     This function is used to toggle the display attribute of the resume/cv drop-down links & content.
 */
 function toggleDisplay(type) {
-    if(type == "resume") {
-        if($("#resume-content").css("display") == "none") {
-            $("#resume-content").css("display", "block");
-            $("#resume-triangle").css({"border-left":"20px solid white","border-bottom":"15px solid transparent", "border-top":"15px solid transparent"});
-        }
-        else {
-            $("#resume-content").css("display", "none");
-            $("#resume-triangle").css({"border-left":"15px solid transparent","border-right":"15px solid transparent", "border-top":"20px solid white"});
-        }
-    }
-    else {
+    if(type == "cv") {
         if($("#cv-content").css("display") == "none") {
             $("#cv-content").css("display", "block");
             $("#cv-triangle").css({"border-left":"20px solid white","border-bottom":"15px solid transparent", "border-top":"15px solid transparent"});

@@ -5,6 +5,9 @@
     --secondary: #009CDE;
     --tertiary: #8DC8E8;
     --tertiary-alt: #B0D9EF;
+    --heading-color: white;
+    --text-color: rgb(240, 240, 240);
+    --highlight-color: #eba800;
 }
 * {
     margin: 0;
@@ -14,6 +17,7 @@
     font: 'roboto';
 }
 a{
+    position: relative;
     text-decoration: none;
 }
 a:link {
@@ -39,16 +43,56 @@ a:active {
     background-color: transparent;
     text-decoration: underline;
 }
+span.highlight {
+    color: var(--highlight-color);
+}
 h1 {
     font-size: larger;
+}
+button {
+    cursor: pointer;
+    margin: 0.9rem;
+    padding: 0.6rem;
 }
 header {
     position: relative;
     z-index: -1;
 }
+.contact-me-btn {
+    background-color: var(--tertiary);
+    transition: 0.5s;
+}
+.contact-me-btn:hover {
+    background-color: var(--tertiary-alt);
+    -webkit-box-shadow:0px 0px 147px 16px rgba(176,217,239,0.52);
+    -moz-box-shadow: 0px 0px 147px 16px rgba(176,217,239,0.52);
+    box-shadow: 0px 0px 147px 16px rgba(176,217,239,0.52);
+
+    -webkit-box-shadow:0px 0px 147px 21px rgba(176,217,239,0.59);
+    -moz-box-shadow: 0px 0px 147px 21px rgba(176,217,239,0.59);
+    box-shadow: 0px 0px 147px 21px rgba(176,217,239,0.59);
+}
+.circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
 body {
     color: white;
     background-color: var(--blue);
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+}
+body> header {
+    width: 100%;
+    height: 100%;
+}
+body> header> img {
+    width: 80%;
+    height: 80%;
 }
 body> header> svg {
     background-color: rgba(255,255,255,0);
@@ -56,23 +100,8 @@ body> header> svg {
     left: 0;
     bottom: 0;
 }
-body> header> div {
-    display: none;
-    font-size: 0.8rem;
-    position: absolute;
-    left: 10%;
-    top: 15%;
-    background-color: rgba(255,255,255,0.5);
-    border: white solid 1px;
-    border-radius: 10px;
-    color: var(--blue)
-}
-body> header> div> span {
-    font-size: 23px;
-    font-weight: 700;
-}
 nav {
-    position: sticky;
+    position: relative;
     top: 0;
     display: flex;
     justify-content: space-around;
@@ -80,8 +109,17 @@ nav {
     background-color: var(--blue);
     border-top: var(--tertiary-alt) 0.2em solid;
     border-bottom: var(--tertiary-alt) 0.2em solid;
+    width: 100%;
 }
-nav:first-of-type a {
+nav:first-of-type> div:first-child { 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav:first-of-type> div:first-child> h1 { 
+    margin-left: 0.3rem;
+}
+nav:first-of-type a, nav:first-of-type> button {
     display: none;
 }
 footer {
@@ -128,20 +166,27 @@ nav.hamburger-menu-nav> a {
     background-color: var(--tertiary);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 0.4em;
     box-shadow: 0rem 1.2rem 3rem #000;
     transition: .2s;
+    padding: 0.3rem;
 }
 .project:hover {
     cursor: pointer;
 }
 .project> img {
-    max-height: 300px;
+    height: 45%;
+    object-fit: cover;
+    border-radius: 0.2em;
 }
 .project> h3 {
     text-align: center;
     text-decoration: underline;
     margin: 0.3rem 0;
+}
+.project> p {
+    color: var(--text-color);
 }
 .tags {
     display: flex;
@@ -171,10 +216,12 @@ div.logo {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border: 2px solid var(--tertiary-alt);
 }
 .project-more {
     background-color: #e1e2e6;
-    animation: showMore 375ms linear 0s forwards;
+    animation: showMore 500ms linear 0s forwards;
+    animation-timing-function: ease-in-out;
     padding: 10px 5px;
     border-radius: 20px;
     border: var(--tertiary) solid 1px;
@@ -277,27 +324,87 @@ div.logo {
 .resource-links> a:hover {
     color: var(--blue);
 }
+body> header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body> header> .hero {
+    width: 80%;
+    height: 80%;
+    position: relative;
+}
+body> header> .hero::after {
+    content: "";
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.1;
+}
+body> header> .hero> div {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    z-index: 3;
+}
+body> header> .hero> div> #headline {
+    font-size: 1em;
+}
+body> header> .hero> div> p {
+    background-color: #0d2949;
+    border: 2px solid var(--tertiary);
+    padding: 0.1rem;
+    width: fit-content;
+    font-size: 0.8em;
+}
+body> header> .hero> div> p> span {
+    color: var(--green);
+    font-size: 0.8em;
+}
+body> header> .hero> img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
     #hamburger-menu {
         display: none;
     }
-    body> header> div {
-        font-size: 60px;
-        position: absolute;
-        left: 10%;
-        top: 15%;
-        background-color: rgba(255,255,255,0.5);
-        border: white solid 1px;
-        border-radius: 10px;
-        color: var(--blue)
+    body> header> .hero> div> #headline {
+        font-size: 2em;
     }
-    body> header> div> span {
-        font-size: 90px;
-        font-weight: 700;
+    body> header> .hero> div> p {
+        font-size: 1.1em;
+    }
+    body> header> .hero> div> p> span {
+        font-size: 1.1em;
+    }
+    nav:first-of-type> button {
+        display: block;
     }
     nav:first-of-type a {
         display: inline;
+    }
+    nav:first-of-type a::after {
+        content: "";
+        position: absolute;
+        background-color: var(--green);
+        height: 3px;
+        width: 0%;
+        left: 0;
+        bottom: -6px;
+        transition: 0.3s;
+    }
+    nav:first-of-type a.selected-menu::after {
+        width: 30%;
+    }
+    nav:first-of-type a:hover:after {
+        width: 100%;
     }
     body> header> svg {
         background-color: rgba(255,255,255,0);
@@ -322,24 +429,15 @@ div.logo {
 @keyframes showMore {
     0% {
         position: fixed;
-        width: 25%;
+        bottom: 8%;
+        left: 2.85%;
+        width: 10%;
+        height: 10%;
         opacity: 0.3;
-    }
-    25% {
-        position: fixed;
-        top: 30%;
-        width: 50%;
-        opacity: 0.7;
-    }
-    75% {
-        position: fixed;
-        top: 20%;
-        width: 75%;
-        opacity: 1;
     }
     100% {
         position: fixed;
-        top: 8%;
+        bottom: 8%;
         left: 2.85%;
         width: 93.6%;
         height: 83%;

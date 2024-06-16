@@ -12,22 +12,73 @@
       #hireMe {
           padding: 1.6%;
           text-align: center;
+          background-image: url("Images/circle-scatter-haikei.svg");
+          z-index: -1;
+          position: relative;
+      }
+      #hireMe> div> p {
+        position: relative;
+        padding: 0.3rem;
+      }
+      #hireMe> div> p> span.background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.3);
+          border-radius: 0.4em;
+          z-index: -1;
+          filter: blur(3px);
       }
       #AboutMe {
           display: flex;
           padding: 1.6%;
           flex-wrap: wrap;
+          background-image: url("Images/blob-haikei.svg");
       }
-      #AboutMe> img {
+      #AboutMe> div:first-child {
+          width: 100%;
+      }
+      #AboutMe> div:first-child> img {
           width: 100%;
           border: 0.3rem solid var(--tertiary-alt);
+          object-fit: cover;
       }
-      #AboutMe div:last-child {
+      #AboutMe> div:last-child {
+          width: 100%;
           padding: 1rem;
       }
-      #AboutMe div:last-child h2 {
+      #AboutMe> div:last-child h2 {
           margin-bottom: 1rem;
           text-align: center;
+      }
+      #AboutMe> div:last-child> div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+      }
+      #AboutMe> div:last-child> p {
+        position: relative;
+        color: var(--text-color);
+        padding: 0.3rem;
+        z-index: 1;
+      }
+      #AboutMe> div:last-child> p> span.background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0.4em;
+        z-index: -1;
+        filter: blur(3px);
+      }
+      #services> div> .service> img {
+        width: 50%;
+        object-fit: contain;
       }
       #Projects {
           background-image: url("Images/argoHead.jfif");
@@ -56,15 +107,6 @@
       .projects-showcase::-webkit-scrollbar-track {
           background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
       }
-      .project {
-          width:33%;
-          background-color: var(--tertiary);
-          display: flex;
-          flex-direction: column;
-          border-radius: 0.4em;
-          box-shadow: -1rem 0 3rem #000;
-          transition: .2s;
-      }
       .project:hover {
           transform: translateY(-1rem);
       }
@@ -74,16 +116,122 @@
       .project:not(:first-child) {
           margin-left: -130px;
       }
-      @media screen and (min-width: 700px) {
+      #contact-me {
+        padding: 0 auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        background-image: linear-gradient(to top right, var(--primary) 5%, white 75%);
+        color: var(--primary);
+      }
+      #contact-me> * {
+        margin: 0.3rem;
+      }
+      #contact-me> p> span {
+        color: var(--highlight-color);
+      }
+      #contact-me> form {
+        display: flex;
+        flex-direction: column;
+        justify-content:  center;
+        align-items: flex-start;
+        background-image: radial-gradient(var(--tertiary), var(--primary));
+        border-radius: 10px;
+        width: 50%;
+        padding: 0.6rem;
+      }
+      #contact-me> form> * {
+        margin: 0.6rem 0;
+        padding: 0.3rem;
+      }
+      #contact-me> form> input {
+        width: 100%;
+      }
+      #contact-me> form> select {
+        width: 60%;
+      }
+      #contact-me> form> textarea {
+        width: 100%;
+      }
+      #contact-me> form> div:last-child> * {
+        margin: 0 auto;
+        cursor: pointer;
+      }
+      nav {
+        position: absolute;
+      }
+      body> header {
+        height: 100vh;
+        background-image: linear-gradient(to bottom, var(--primary) 5%, white 75%);
+      }
+      #services {
+          background-image: url("Images/circle-scatter-haikei2.svg");
+      }
+      #services> h2 {
+        text-align: center;
+      }
+      #services> div {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+      }
+      #services> div> .service {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 0.3rem;
+        margin: 0.6rem;
+      }
+      #services> div> .service> div {
+        margin-top: 0.6rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0.4em;
+        Backdrop-filter: blur(3px);
+        padding: 0.3rem;
+      }
+      #services> div> .service> div> h3 {
+        text-align: center;
+        margin-bottom: 0.3rem;
+      }
+      #services> div> .service> div> p {
+        color: var(--text-color);
+      }
+      @media screen and (min-width: 900px) {
+          nav {
+            position: absolute;
+          }
+          body> header {
+            height: 100vh;
+            background-image: linear-gradient(to bottom, var(--primary) 5%, white 75%);
+          }
           #AboutMe {
               flex-wrap: nowrap;
+              width: 100%;
+              background-image: url("Images/blob-haikei.svg");
           }
-          #AboutMe> img {
+          #AboutMe> div:first-child, #AboutMe> div:last-child {
               width: 50%;
+          }
+          #AboutMe> div:first-child> img {
+              width: 50%;
+              width: 100%;
               border: 0.3rem solid var(--tertiary-alt);
+              object-fit: cover;
+          }
+          #AboutMe> div:last-child> div:last-child> button {
+            font-size: smaller;
+          }
+          #services> div {
+            flex-direction: row;
           }
       }
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 900px) {
         #Projects {
           padding: 0;
           padding-top: 0.1rem;
@@ -123,20 +271,30 @@
 </head>
 <body>
     <nav>
-        <div class="logo"></div>
+        <div>
+          <div class="logo"></div>
+          <h1>Demarcus Simmons</h1>
+        </div>
         <img id="hamburger-menu" src="Images/hamburger_menu.png" alt="Hamburger Menu" onclick="toggleHamburgerNav()">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="selected-menu">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="resume_cv.html">Resume/CV</a>
+        <a href="resume_cv.html">CV</a>
+        <button type="button" class="contact-me-btn" onclick="document.querySelector('#contact-me').scrollIntoView({behavior:'smooth'});">Contact Me</button>
     </nav>
     <nav class="hamburger-menu-nav" style="display: none;">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="resume_cv.html">Resume/CV</a>
+        <a href="resume_cv.html">CV</a>
+        <button type="button" class="contact-me-btn" onclick="document.querySelector('#contact-me').scrollIntoView({behavior:'smooth'});">Contact Me</button>
     </nav>
     <header>
-      <img src="Images/shotOnBridge.JPG" alt="Self-Portrait" style="width: 100%;">
-      <div>Hey, I'm<br><span>Marcus</span><br>a Professional<br>Computer Scientist</div>
+      <section class="hero">
+        <img src="Images/shotOnBridge.JPG" alt="Self-Portrait" style="width: 100%;">
+        <div>
+          <h1 id="headline">Mr.Big Splash,<br>a Professional Computer Scientist</h1>
+          <p>Specializing in <span>AI & CYBERSECURITY</span></p>
+        </div>
+      </section>
       <svg width="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
           .path-0{
             animation:pathAnim-0 4s;
@@ -206,16 +364,55 @@
           }</style><path d="M 0,400 C 0,400 0,300 0,300 C 23.943178798628608,306.39341406902565 47.886357597257216,312.78682813805125 75,307 C 102.11364240274278,301.21317186194875 132.39774840959973,283.2461015168205 161,274 C 189.60225159040027,264.7538984831795 216.52264876434373,264.2287657946667 239,271 C 261.4773512356563,277.7712342053333 279.5116565330255,291.8388353045127 308,302 C 336.4883434669745,312.1611646954873 375.43072510355444,318.41589298728246 405,321 C 434.56927489644556,323.58410701271754 454.76544305275695,322.49759274635744 478,326 C 501.23455694724305,329.50240725364256 527.5075026854178,337.5937360272878 554,325 C 580.4924973145822,312.4062639727122 607.2045462055723,279.1274631444914 634,271 C 660.7954537944277,262.8725368555086 687.6743124922926,279.89641139474656 718,298 C 748.3256875077074,316.10358860525344 782.0982038252574,335.2868912765222 808,332 C 833.9017961747426,328.7131087234778 851.9328722066775,302.9560234991643 873,296 C 894.0671277933225,289.0439765008357 918.1703073480325,300.88901472682056 946,313 C 973.8296926519675,325.11098527317944 1005.3858984011933,337.4879175935537 1032,327 C 1058.6141015988067,316.5120824064463 1080.2860990471938,283.15931489896485 1109,279 C 1137.7139009528062,274.84068510103515 1173.4697054100304,299.8748228105867 1204,317 C 1234.5302945899696,334.1251771894133 1259.835079312684,343.3413938586882 1283,330 C 1306.164920687316,316.6586061413118 1327.1899773392329,280.7596017546605 1353,272 C 1378.8100226607671,263.2403982453395 1409.4050113303836,281.62019912266976 1440,300 C 1440,300 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#004c97" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-2"></path></svg>
     </header>
     <main>
-      <!--Why hire me for your next project?-->
-        <section id="hireMe">
+        <section id="AboutMe">
             <div>
-                <h2>Why Hire Me?</h2>
-                <p>I'm an enthusiastic and creative developer constantly seeking innovative solutions to complex challenges.
-                  My strong critical thinking and problem-solving skills enable me to approach problems from unique angles and devise efficient, effective solutions.
-                  With my dedication to learning, adaptability, and commitment to pushing the boundaries of what is possible in the 
-                  field of computer science, I am a valuable asset who can contribute significantly to a company's success and technological advancements.
-                </p>
+              <img src="Images/headshot2.JPG" alt="headshot2">
             </div>
+            <div>
+                <h2>About Me</h2>
+                <p>
+                  <span class="background"></span>
+                  Class of 2023, Graduate of <span class="highlight"></span> The University of West Florida graduating with a <span class="highlight">Bachelor's of Science in 
+                  Computer Science</span> with a <span class="highlight">focus in Cybersecurity</span>, and <span class="highlight">minor in Computer Engineering</span>.
+                  I've developed an immense passion for technology, and I'm fascinated with where it can take me.
+                  I look for ways to be involved whether through conferences, clubs, or events. These help me keep my
+                  skills up-to-date with current advancements and trends in the field.
+                  My dedication to continuous learning and my genuine interest in embracing new challenges allow me to 
+                  approach life with an open mind, a warm heart, and an unwavering commitment to making a positive
+                  impact on the world around me.
+                </p>
+                <div>
+                  <button type="button" onclick="window.location.href = 'projects.html';">See my projects</button>
+                  <button type="button" onclick="window.location.href = 'resume_cv.html';">See my CV</button>
+                  <button type="button" class="contact-me-btn" onclick="document.querySelector('#contact-me').scrollIntoView({behavior:'smooth'});">Contact Me</button>
+                </div>
+            </div>
+        </section>
+        <section id="services">
+          <h2>Services</h2>
+          <div>
+            <div class="service">
+                <img src="Images/world-wide-web.png" alt="">
+                <div>
+                  <h3>Web Development</h3>
+                  <p>I've worked both <span class="highlight">front-end</span> and <span class="highlight">back-end</span> of several websites. I've utulized <span class="highlight">php</span>, <span class="highlight">java servlets</span>, and many other <span class="highlight">web technologies</span> and <span class="highlight">web frameworks</span>. I'm able to create <span class="highlight">secure websites</span> by using <span class="highlight">secure protocols</span> and following <span class="highlight">best security practices</span> to <span class="highlight">ensure protection</span> against common web attacks.</p>
+                </div>
+            </div>
+            <div class="service">
+                <img src="Images/web-development.png" alt="">
+                <div>
+                  <h3>Desktop Development</h3>
+                  <p>I've developed several desktop applications using <span class="highlight">Java</span>, <span class="highlight">C++</span>, <span class="highlight">Python</span>, and more. I'm able to create <span class="highlight">distributed apps</span> that can communicate across the network, as well as <span class="highlight">multithreaded apps</span>. By following a <span class="highlight">SSDLC</span>, I'm able to <span class="highlight">ensure protection</span> against common computer attacks by using <span class="highlight">secure protocols</span> and following <span class="highlight">best security practices</span>.</p>
+                </div>
+            </div>
+            <div class="service">
+                <img src="Images/artificial-intelligence.png" alt="">
+                <div>
+                  <h3>AI & Machine Learning</h3>
+                  <p>I have experience in developing <span class="highlight">A.I. agents</span> to <span class="highlight">solve problems</span>, such as playing a game of <span class="highlight">Connect 4</span>, and solving the <span class="highlight">Traveling Salesman Problem</span>. I have strong knowledge of <span class="highlight">search algorithms in A.I.</span>, <span class="highlight">knowledge representation</span>, and <span class="highlight">Machine Learning</span>. I have strong knowledge of <span class="highlight">APIs</span> such as <span class="highlight">OpenCV</span>. Moreover, I have a drive for continuous learning in the field.</p>
+                </div>
+            </div>
+          </div>
         </section>
         <section id="Projects">
             <h2>Projects</h2>
@@ -223,15 +420,36 @@
             </div>
             <button type="button" onclick="location.href = 'projects.html'" style="padding:0.6rem; font-size: larger;">See More</button>
         </section>
-        <section id="AboutMe">
-            <img src="Images/headshot2.JPG" alt="headshot2">
+      <!--Why hire me for your next project?-->
+        <section id="hireMe">
             <div>
-                <h2>About Me</h2>
-                <p>Class of 2023, Graduate of The University of West Florida graduating with a Bachelor's of Science with
-                  a major in Computer Science and minor in Computer Engineering.
-                  I am an enthusiastic individual driven by my passion for technology, a love for life's diverse experiences, and a deep-rooted faith. I find immense joy in exploring the intersection where technology meets the great outdoors, reveling in the beauty of nature while also relishing the intricacies of computer systems. Beyond my fascination with computers and coding, my true fulfillment comes from connecting with people. I cherish building meaningful relationships and fostering connections, recognizing the value of collaboration, empathy, and understanding in both personal and professional settings. My dedication to continuous learning and my genuine interest in embracing new challenges allow me to approach life with an open mind, a warm heart, and an unwavering commitment to making a positive impact on the world around me.
+                <h2>Why Hire Me?</h2>
+                <p>
+                  <span class="background"></span>
+                  With Advance Knowledge and Skills in both computer <span class="highlight">hardware</span> and <span class="highlight">software</span>, I am a valuable asset who can contribute significantly to <span class="highlight">a company's success</span> and <span class="highlight">technological advancements</span>.
+                  My <span class="highlight">enthusiasm</span> and <span class="highlight">creativity</span> as a developer drives me to <span class="highlight">seek innovative solutions to complex challenges</span>.
                 </p>
             </div>
+        </section>
+        <section id="contact-me">
+            <h2>Contact Me</h2>
+            <p>Email: <span>dds39@students.uwf.edu</span> || <span>marcussimmons13@gmail.com</span></p>
+            <p>Phone: <span>850-346-7096</span></p>
+            <p>...or use the following form</p>
+            <form method="post" action="mailto:marcussimmons13@gmail.com">
+                <input type="text" name="name" id="name" value="" placeholder="Name*" />
+                <input type="email" name="email" id="email" value="" placeholder="Email*" />
+                <select name="category" id="category">
+                  <option value="">- Category -</option>
+                  <option value="1">Hiring</option>
+                  <option value="1">Other</option>
+                </select>
+                <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+                <div>
+                    <input type="submit" value="Send Message" class="primary" />
+                    <input type="reset" value="Reset" />
+                </div>
+            </form>
         </section>
     </main>
     <footer>
@@ -242,6 +460,9 @@
             </div>
             <div>
                 <a href="https://www.flaticon.com/free-icons/cat" title="cat icons" target="_blank">Cat icons created by Dave Gandy - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/artificial-intelligence" title="artificial intelligence icons">Artificial intelligence icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Web development Icons made by Smashicons - Flaticon</a>
+                <a href="https://www.freepik.com" title="Freepik">Www Icons made by Freepik - Flaticon</a>
             </div>
             <div>
                 <h3>Connect With Me:</h3>
@@ -251,5 +472,29 @@
         </div>
         <div>Also of Interest</div>
     </footer>
+
 </body>
+<!--
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <script src="cursor.js"></script>
+-->
+    <script>
+        window.addEventListener("DOMContentLoaded", ()=> {
+          if(cookie_isset("goToContact","True")) {
+            document.querySelector('#contact-me').scrollIntoView({behavior:'smooth'});
+            removeCookie("goToContact");
+          }
+        });
+
+    </script>
 </html>
