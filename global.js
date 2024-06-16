@@ -7,6 +7,12 @@ window.addEventListener("DOMContentLoaded",()=>{
     fetchProjectData().then(() => {
         loadDynamicContent();
     });
+
+    $("body").on("click", e=> {
+        if(e.target.nodeName != "NAV" && e.target.parentNode.nodeName != "NAV" && $(".hamburger-menu-nav").length > 0) {
+        $('.hamburger-menu-nav').css('display','none');
+        }
+    })
 });
 
 /*

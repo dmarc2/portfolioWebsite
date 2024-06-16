@@ -284,11 +284,11 @@
         <a href="resume_cv.html">CV</a>
         <button type="button" class="contact-me-btn" onclick="document.querySelector('#contact-me').scrollIntoView({behavior:'smooth'});">Contact Me</button>
     </nav>
-    <nav class="hamburger-menu-nav" style="display: none;">
+    <nav class="hamburger-menu-nav" style="display: none;" onmouseout="$('.hamburger-menu-nav').css('display','none');">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="resume_cv.html">CV</a>
-        <button type="button" class="contact-me-btn" onclick="document.querySelector('#contact-me').scrollIntoView({behavior:'smooth'});">Contact Me</button>
+        <button type="button" class="contact-me-btn" onclick="document.querySelector('#contact-me').scrollIntoView({behavior:'smooth'});$('.hamburger-menu-nav').css('display','none');">Contact Me</button>
     </nav>
     <header>
       <section class="hero">
@@ -498,6 +498,5 @@
             removeCookie("goToContact");
           }
         });
-
     </script>
 </html>
