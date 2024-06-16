@@ -49,6 +49,9 @@ span.highlight {
 h1 {
     font-size: larger;
 }
+h2 {
+    font-size: 2rem;
+}
 button {
     cursor: pointer;
     margin: 0.9rem;
