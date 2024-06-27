@@ -9,6 +9,10 @@
             "color": "blue"
         },
         {
+            "name": "C++",
+            "color": "lightblue"
+        },
+        {
             "name": "Docker",
             "color": "#3f51b5"
         },
@@ -35,6 +39,34 @@
         {
             "name": "Game",
             "color": "limegreen"
+        },
+        {
+            "name": "VHDL",
+            "color": "#c46666"
+        },
+        {
+            "name": "FPGA",
+            "color": "pink"
+        },
+        {
+            "name": "AI",
+            "color": "purple"
+        },
+        {
+            "name": "Desktop",
+            "color": "pink"
+        },
+        {
+            "name": "CompArch",
+            "color": "yellow"
+        },
+        {
+            "name": "Networking",
+            "color": "skyblue"
+        },
+        {
+            "name": "API",
+            "color": "magenta"
         }
     ]
 }

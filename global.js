@@ -135,7 +135,7 @@ function getProjects(howMany) {
         htmlContent += "<div class='project' onclick='showMore("+i+")'>";
         htmlContent += "<img src='" +projects[i].images[0]+ "' alt='Project Image'>";
         htmlContent += "<h3>" +projects[i].title+ "</h3>";
-        htmlContent += "<p>" +projects[i].description.replace("<br>"," ").substring(0,150)+ "...</p>";
+        htmlContent += "<p>" +projects[i].description + "</p>";
         htmlContent += "<div class='tags'><ul>";
         projects[i].tags.forEach(tag=>{
             htmlContent += "<li class='tag' style='border: dashed 3px " +getTagColor(tag)+ "'>" +tag+ "</li>";
@@ -183,12 +183,13 @@ function getProjContent(index) {
     //"<div><div><div class='prevNextBtns' onclick='goToPrevBubble("+index+","+(-1)+")'><</div><img id='projMoreVisual' src='" +projects[index].images[0]+ "' alt='Project Image'><div class='prevNextBtns' onclick='goToNextBubble("+index+","+(1)+")'>></div></div><div class='bubbles'>"+getBubbles(index)+"</div></div>" + 
     let content = "<div class='project-more-container'>" +
     "<div><div><div class='prevNextBtns'><</div><img id='projMoreVisual' src='" +projects[index].images[0]+ "' alt='Project Image'><div class='prevNextBtns'>></div></div><div class='bubbles'>"+getBubbles(index)+"</div></div>" + 
-    "<div><h1>" +projects[index].title+ "</h1><article><p>" +projects[index].description+ "</p></article><div class='project-links'><div class='resource-links'>" +
+    // "<div><h1>" +projects[index].title+ "</h1><article><p>" +projects[index].description+ "</p></article><div class='project-links'><div class='resource-links'>" +
+    "<div><h1>" +projects[index].title+ "</h1><article><p>" +projects[index].summary+ "</p></article><div class='project-links'><div class='resource-links'>" +
     getResourceLinks(index) + "</div><div class='external-links'>" +
     getExternalLinks(index) +
     "</div></div><div class='tags'><ul>";
     projects[index].tags.forEach(tag=>{
-        content += "<li class='tag' style='border: dashed 1px " +getTagColor(tag)+ "'>" +tag+ "</li>";
+        content += "<li class='tag' style='border: dashed 3px " +getTagColor(tag)+ "'>" +tag+ "</li>";
     });
     content += "</ul></div></div></div>"
     return content;
