@@ -80,9 +80,39 @@
         width: 50%;
         object-fit: contain;
       }
+
+
+        /* .project {
+            width:80%;
+            background-color: var(--tertiary);
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.4em;
+            box-shadow: -0.6rem 0 4rem #000;
+            transition: .2s;
+            margin: 0px 0.3rem;
+        }
+        .project:first-child {
+            margin-left: 2rem;
+        }
+        .project:last-child {
+            margin-right: 2rem;
+        }
+        .project:hover {
+            transform: none;
+        }
+        .project:hover~* {
+            transform: none;
+        }
+        .project:not(:first-child) {
+            margin-left: 0px;
+        } */
+
+
       #Projects {
           background-image: url("Images/argoHead.jfif");
-          padding: 1.6%;
+          padding: 0;
+          padding-top: 0.1rem;
       }
       #Projects h2 {
           text-align: center;
@@ -97,7 +127,7 @@
       .projects-showcase {
           display: flex;
           overflow-x: scroll;
-          padding: 1.3rem;
+          padding: 0.3rem 0px;
       }
       .projects-showcase::-webkit-scrollbar-thumb {
           background-color: #201c29;
@@ -106,15 +136,6 @@
       }
       .projects-showcase::-webkit-scrollbar-track {
           background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
-      }
-      .project:hover {
-          transform: translateY(-1rem);
-      }
-      .project:hover~* {
-          transform: translateX(130px);
-      }
-      .project:not(:first-child) {
-          margin-left: -130px;
       }
       #contact-me {
         padding: 0 auto;
@@ -230,11 +251,26 @@
           #services> div {
             flex-direction: row;
           }
+          #Projects {
+              padding: 1.6%;
+          }
+          .projects-showcase {
+              padding: 1.3rem;
+          }
+          .project:hover {
+              transform: translateY(-1rem);
+          }
+          .project:hover~* {
+              transform: translateX(130px);
+          }
+          .project:not(:first-child) {
+              margin-left: -130px;
+          }
           #contact-me> form {
             width: 50%;
           }
       }
-      @media screen and (max-width: 900px) {
+      /* @media screen and (max-width: 900px) {
         #Projects {
           padding: 0;
           padding-top: 0.1rem;
@@ -269,7 +305,7 @@
         .project:not(:first-child) {
             margin-left: 0px;
         }
-      }
+      } */
     </style>
 </head>
 <body>

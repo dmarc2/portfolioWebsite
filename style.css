@@ -167,7 +167,7 @@ nav.hamburger-menu-nav> a {
     margin: 1.3rem 0rem;
 }
 .project {
-    width:33%;
+    width:80%; 
     background-color: var(--tertiary);
     display: flex;
     flex-direction: column;
@@ -178,11 +178,17 @@ nav.hamburger-menu-nav> a {
     padding: 0.3rem;
 }
 .project:hover {
+    transform: none;
     cursor: pointer;
+}
+.project:hover~* {
+    transform: none;
 }
 .project> img {
     height: 45%;
     width: 100%;
+    width: 400px;
+    height: 300px;
     object-fit: cover;
     border-radius: 0.2em;
 }
@@ -378,6 +384,13 @@ body> header> .hero> img {
 }
 
 @media (min-width: 900px) {
+    .project {
+        width:33%;
+    }
+    .project> img {
+        height: 45%;
+        width: 100%;
+    }
     #hamburger-menu {
         display: none;
     }
